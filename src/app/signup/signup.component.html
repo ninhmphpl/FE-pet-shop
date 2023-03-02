@@ -1,1 +1,124 @@
-<p>signup works!</p>
+<app-header></app-header>
+<!-- Breadcrumb Area Start -->
+<div class="section breadcrumb-area bg-bright">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="breadcrumb-wrapper">
+          <h2 class="breadcrumb-title">Create Account</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>Create Account</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb Area End -->
+
+<!-- Register Section Start -->
+<div class="section section-margin">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-8 m-auto">
+        <div class="login-wrapper">
+
+          <!-- Register Title & Content Start -->
+          <div class="section-content text-center mb-6">
+            <h2 class="title mb-2">Create Account</h2>
+          </div>
+          <!-- Register Title & Content End -->
+
+          <!-- Form Action Start -->
+          <form [formGroup]="signupForm" (ngSubmit)="submit()" method="post">
+
+            <!-- Input First Name Start -->
+            <div class="single-input-item mb-2">
+              <input type="text" placeholder="First Name" formControlName="firstName">
+              <div
+                *ngIf="signupForm.controls.firstName.invalid && (signupForm.controls.firstName.dirty || signupForm.controls.firstName.touched)">
+                <div *ngIf="signupForm.controls.firstName.errors?.['required']" class="text-danger">
+                  Required
+                </div>
+              </div>
+            </div>
+            <!-- Input First Name End -->
+
+            <!-- Input Last Name Start -->
+            <div class="single-input-item mb-2">
+              <input type="text" placeholder="Last Name" formControlName="lastName">
+              <div
+                *ngIf="signupForm.controls.lastName.invalid && (signupForm.controls.lastName.dirty || signupForm.controls.lastName.touched)">
+                <div *ngIf="signupForm.controls.lastName.errors?.['required']" class="text-danger">
+                  Required
+                </div>
+              </div>
+            </div>
+            <!-- Input Last Name End -->
+
+            <!-- Input Username Start -->
+            <div class="single-input-item mb-2">
+              <input type="text" placeholder="Username" formControlName="username">
+              <div
+                *ngIf="signupForm.controls.username.invalid && (signupForm.controls.username.dirty || signupForm.controls.username.touched)">
+                <div *ngIf="signupForm.controls.username.errors?.['required']" class="text-danger">
+                  Required
+                </div>
+                <div *ngIf="signupForm.controls.username.errors?.['pattern']" class="text-danger">
+                  Just input (a-z, A-Z)
+                </div>
+              </div>
+            </div>
+            <!-- Input Username End -->
+
+            <!-- Input Password Start -->
+            <div class="single-input-item mb-2">
+              <input type="password" placeholder="Password" formControlName="password">
+              <div
+                *ngIf="signupForm.controls.password.invalid && (signupForm.controls.password.dirty || signupForm.controls.password.touched)">
+                <div *ngIf="signupForm.controls.password.errors?.['required']" class="text-danger">
+                  Required
+                </div>
+                <div *ngIf="signupForm.controls.password.errors?.['pattern']" class="text-danger">
+                  Just input (@!@#$%^&* , number and character)
+                </div>
+              </div>
+            </div>
+            <!-- Input Password End -->
+
+            <!-- Input re Password Start -->
+            <div class="single-input-item mb-2">
+              <input type="password" placeholder="Re-Password" formControlName="rePassword">
+              <div
+                *ngIf="signupForm.controls.rePassword.invalid && (signupForm.controls.rePassword.dirty || signupForm.controls.rePassword.touched)">
+                <div *ngIf="signupForm.controls.rePassword.errors?.['required']" class="text-danger">
+                  Required
+                </div>
+              </div>
+            </div>
+            <!-- Input re Password End -->
+
+            <!-- Button/Forget Password Start -->
+            <div class="single-input-item">
+              <div class="login-reg-form-meta mb-n3">
+                <button class="btn btn btn-gray-deep btn-hover-primary mb-3">Create</button>
+                <div class="text-danger" [innerText]="message">Message</div>
+              </div>
+              <p class="py-3">
+                I have a account, <a class="mt-3" href="/login">Login</a>
+              </p>
+
+            </div>
+            <!-- Button/Forget Password End -->
+
+          </form>
+          <!-- Form Action End -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Register Section End -->
+<app-footer></app-footer>

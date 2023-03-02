@@ -1,1 +1,87 @@
-<p>login works!</p>
+<app-header></app-header>
+<!-- Breadcrumb Area Start -->
+<div class="section breadcrumb-area bg-bright">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="breadcrumb-wrapper">
+          <h2 class="breadcrumb-title">Login</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>Login</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb Area End -->
+
+<!-- Login Section Start -->
+<div class="section section-margin">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-8 m-auto">
+        <div class="login-wrapper">
+
+          <!-- Login Title & Content Start -->
+          <div class="section-content text-center mb-6">
+            <h2 class="title mb-2">Login</h2>
+          </div>
+          <!-- Login Title & Content End -->
+
+          <!-- Form Action Start -->
+          <form action="#" method="post" [formGroup]="formUser" (ngSubmit)="submit()">
+
+            <!-- Input Username Start -->
+            <div class="single-input-item mb-2">
+              <input type="text" placeholder="Username" formControlName="username">
+              <div
+                *ngIf="formUser.controls.username.invalid && (formUser.controls.username.dirty || formUser.controls.username.touched)">
+                <div *ngIf="formUser.controls.username.errors?.['required']" class="text-danger">
+                  Required
+                </div>
+              </div>
+            </div>
+            <!-- Input Username End -->
+
+            <!-- Input Password Start -->
+            <div class="single-input-item mb-2">
+              <input type="password" placeholder="Enter your Password" formControlName="password">
+              <div
+                *ngIf="formUser.controls.password.invalid && (formUser.controls.password.dirty || formUser.controls.password.touched)">
+                <div *ngIf="formUser.controls.password.errors?.['required']" class="text-danger">
+                  Required
+                </div>
+              </div>
+            </div>
+            <!-- Input Password End -->
+
+            <!-- Button/Forget Password Start -->
+            <div class="single-input-item mb-3">
+              <div class="login-reg-form-meta mb-n3">
+
+                <button class="btn btn btn-gray-deep btn-hover-primary mb-3" [disabled]="!formUser.valid" >Sign In</button>
+                <p *ngIf="api.apiError && api.apiError.status == 401" class="text-danger">Username or password is wrong</p>
+                <a href="#" class="forget-pwd mb-3">Forget Password?</a>
+
+              </div>
+            </div>
+            <!-- Button/Forget Password End -->
+
+            <!-- Lost Password & Creat New Account Start -->
+            <div class="lost-password">
+              <a href="/signup">Creat Account</a>
+            </div>
+            <!-- Lost Password & Creat New Account End -->
+
+          </form>
+          <!-- Form Action End -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Login Section End -->
+<app-footer></app-footer>
