@@ -22,12 +22,35 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/images/favicon.ico"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/vendor/fontawesome.min.css",
+              "src/assets/css/vendor/simple-line-icons.min.css",
+              "src/assets/css/vendor/themify-icons-min.css",
+              "src/assets/css/plugins/swiper-bundle.min.css",
+              "src/assets/css/plugins/animate.min.css",
+              "src/assets/css/plugins/lightgallery.min.css",
+              "src/assets/css/plugins/aos.min.css",
+              "src/assets/css/plugins/nice-select.min.css",
+              "src/assets/css/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/vendor/popper.min.js",
+              "src/assets/js/vendor/bootstrap.min.js",
+              "src/assets/js/vendor/jquery-3.6.0.min.js",
+              "src/assets/js/vendor/jquery-migrate-3.3.2.min.js",
+              "src/assets/js/vendor/modernizr-3.11.2.min.js",
+              "src/assets/js/plugins/aos.min.js",
+              "src/assets/js/plugins/jquery.ajaxchimp.min.js",
+              "src/assets/js/plugins/jquery-ui.min.js",
+              "src/assets/js/plugins/nice-select.min.js",
+              "src/assets/js/plugins/swiper-bundle.min.js",
+              "src/assets/js/plugins/countdown.min.js",
+              "src/assets/js/plugins/lightgallery-all.min.js"
+            ]
           },
           "configurations": {
             "production": {
